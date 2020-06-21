@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
 	printf("3. mcpelauncher\n");
 	printf("> ");
 	scanf ("%s",choice);
-	switch((int)choice) {
+	switch(atoi(choice)) {
 		case 1:
 			printf("Opening minecraft-launcher...");
 			minecraft_launcher();
