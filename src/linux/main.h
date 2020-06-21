@@ -23,7 +23,3 @@ void minecraft_launcher(){
     system("minecraft-launcher");
 
 }
-
-void mcBedrock(){
-
-}
