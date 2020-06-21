@@ -1,0 +1,5 @@
+GPUCache/
+main.build
+main.dist
+__pycache__
+MCPE.AppImage
