@@ -16,9 +16,11 @@ void MCPEApp(){
 }
 
 void multimc(){
+    system("multimc");
 }
 
 void minecraft_launcher(){
+    system("minecraft-launcher");
 
 }
 
