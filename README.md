@@ -10,7 +10,7 @@ We plan to support the vanilla minecraft-launcher, MultiMC5, [mcpelauncher-linux
 On linux, mcpelauncher may be downloaded based on user input.
 
 ## How?
-It's a CLI. Soon, it'll be in GUI form.
+Subprocess and requests.
 
 ## What languages?
 Python. Binaries can be made with nuitka.
