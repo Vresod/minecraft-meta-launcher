@@ -7,19 +7,22 @@ import requests
 from pathlib import Path
 home = str(Path.home())
 
+instances = os.listdir("{0}/.local/share/multimc/instances".format(home))[:-2]
 
 print("1. Minecraft Launcher")
 print("2. MultiMC")
 print("3. MCPElauncher")
-launcher_choice = input("> ")
+for instance in instances:
+	print("{0}. {1}".format(instances.index(instance) + 4,instance))
+launcher_choice = int(input("> "))
 
-if(launcher_choice == "1"):
+if(launcher_choice == 1):
 	print("You picked Minecraft Launcher. Opening minecraft-launcher...")
 	subprocess.run(["minecraft-launcher"])
-elif(launcher_choice == "2"):
+elif(launcher_choice == 2):
 	print("You picked MultiMC. Opening multimc...")
 	subprocess.run(["multimc"])
-elif(launcher_choice == "3"):
+elif(launcher_choice == 3):
 	print("You picked MCPElauncher.")
 	if(not extra.file_exists("MCPE.AppImage")):
 		download_choice = "Y"
@@ -31,3 +34,6 @@ elif(launcher_choice == "3"):
 		open("MCPE.AppImage", 'wb').write(appimage.content)
 	subprocess.run(["chmod", "+x", "MCPE.AppImage"])
 	subprocess.run(["./MCPE.AppImage"])
+elif(launcher_choice >= 4):
+	print("You picked {0} on MultiMC. Opening multimc...".format(instances[launcher_choice - 4]))
+	subprocess.run(["multimc","-l",instances[launcher_choice - 4]])
