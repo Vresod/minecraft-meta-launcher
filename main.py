@@ -7,7 +7,8 @@ import requests
 from pathlib import Path
 home = str(Path.home())
 
-instances = os.listdir("{0}/.local/share/multimc/instances".format(home))[:-2]
+instances = os.listdir("{0}/.local/share/multimc/instances".format(home))
+instances.remove("_MMC_TEMP");instances.remove("instgroups.json")
 
 print("1. Minecraft Launcher")
 print("2. MultiMC")
